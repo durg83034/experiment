@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0">
+
+    <title>Virtual Labs</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="fonts.googleapis.com/css251a2.css?family=Open+Sans&amp;family=Raleway&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vlabs-style.css">
+    <script src="js/slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- END INCLUDE HEADER AND FOOTER -->
+    <!-- BEGIN INCLUDE MARKDOWN FILES USING ZERO MD JS -->
+    <script src="js/webcomponents-loader.min.js"></script>
+    <script>
+        // Set global configs. Declare before importing `zero-md` element.
+        // These settings will apply to all instances of `zero-md`.
+        window.ZeroMd = {
+            config: {
+                cssUrls: ['css/github-markdown.min.css',
+                    'css/vlabs-style.css'
+                ]
+            }
+        };
+    </script>
+    <script type="module" src="js/zero-md.min.js"></script>
+    <!-- END INCLUDE MARKDOWN FILES USING ZERO MD JS -->
+</head>
+<body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+    <!--Google Tag Manager (noscript)-->
+    <!--<noscript class="gtm">
+      <iframe height="0" src="../../../../www.googletagmanager.com/nsc08e.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0">
+      </iframe>
+    </noscript>-->
+    <!--End Google Tag Manager (noscript)-->
+    <header class="vlabs-header sticky-top bg-white">
+
+        <div class="row">
+            <div class="col-md-4">
+                <a href="http://www.vlab.co.in/" class="navbar-brand">
+                    <img src="images/logo-new.png" alt="vlabs logo">
+
+                </a>
+            </div>
+
+
+
+            <div class="col-md-8">
+                <p align="right" style="margin-top:20px; font-weight:300;"><a id="tophead" href="http://ebootathon.com/" class="tophead">HOME</a>  <a id="tophead" href="http://ebootathon.com/mentors.html">MENTORS</a> <a id="tophead" href="http://ebootathon.com/contributers.html">CONTRIBUTORS</a></p>
+            </div>
+
+        </div>
+
+        <nav class="p-0 navbar navbar-expand-lg navbar-light">
+
+            <button class="navbar-toggler  ml-auto" type="button" data-toggle="collapse" data-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="headerNavbar">
+
+                <ul class="navbar-nav ml-auto" style="margin-bottom:20px;">
+                    <li class="treeview"><a href="index.html" class="py-2">Aim</a></li>
+                    <li class="treeview"><a href="theory.html" class="py-2">Theory</a></li>
+                    <li class="nav-item"><a href="pretest.html" class="py-2">Pre Test</a></li>
+                    <li class="nav-item"><a href="procedure.html" class="py-2">Procedure</a></li>
+                    <li class="nav-item"><a href="simulation.html" class="py-2">Simulation</a></li>
+                    <li class="nav-item"><a href="posttest.html" class="py-2">Post Test</a></li>
+                    <li class="nav-item"><a href="references.html" class="py-2">References</a></li>
+                    <!--<li class="nav-item"><a href="developers.html" class="py-2"><strong>Developers</strong></a></li>-->
+                    <li class="active nav-item"><a href="feedback.html" class="py-2">Feedback</a></li>
+
+
+                    <!--<li class="nav-item">
+                        <a class="px-2" href="http://www.vlab.co.in/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-2" href="#">PARTNERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-2" href="#">CONTACT</a>
+                    </li>-->
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+        <div class="row py-4 px-4 breadcrumbs">
+            <div id="labname"></div>
+
+            <script src="js/jquery.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $.getJSON("details.json", function (data) {
+                        $('#labname').append(data.details[0].Lab)
+                    }).fail(function () {
+                        $('#labname').append("<h3 style='color:red'>Expeiment Name is not mentioned by Developer</h3>")
+                    });
+                });
+            </script>
+            <!-- <span class="mx-2">
+                <i aria-hidden="true" class="fa fa-angle-right"></i>
+            </span>
+            <a href="#">
+                <zero-md src="round-template/experiment/experiment-name.md">
+                </zero-md>
+            </a> -->
+            <!--<span class="mx-2">
+              <i aria-hidden="true" class="fa fa-angle-right"></i>
+            </span>
+            <a href="#">
+              Experiments
+            </a>-->
+        </div>
+        <div class="row flex-grow-1 px-4">
+
+            <div class="vlabs-page-content col col-sm-7 col-lg-10 pr-5 pb-4">
+                <zero-md src="name.md">
+                    <template>
+                        <style>
+                            div {
+                                font-family: 'Raleway', sans-serif;
+                            }
+
+                            h1, h2 {
+                                margin: 0.5em 0;
+                                color: #2C99CE;
+                                text-align: center;
+                            }
+                        </style>
+                    </template>
+                </zero-md>
+                <h3 class="page-name">Feedback</h3>
+                <div>
+                    <p><b>Dear User</b>,</p>
+
+                    <p>
+                        Thanks for using Virtual Labs. Your opinion is valuable to us.  To help us improve, we'd like to ask you a few questions about your experience. It will only take 3 minutes and your answers will help us make Virtual Labs better for you and other users.
+                    </p>
+                    <p style="text-align: center">
+                        <!--<a id="feedback-btn-link"
+                           href="#"
+                           target="_blank">-->
+                        <button id="feedback-btn" type="button"
+                                class="btn btn-default btn-lg">
+                            Share Your Experience
+                        </button>
+                        <!--</a>-->
+
+                        <iframe src="https://forms.gle/fq5vRTHeVUJtFjjs9" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </p> <p style="text-align: center">
+                        Thank you !!!<br />
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+        <script>
+            $(document).ready(function () {
+                $.getJSON("details.json", function (data) {
+                    for (var con of data.contributer) {
+                        $('#contributer').append(con.Contributer + " | <span style='color:yellow'> " + con.Institute + "</span><br/>")
+                    }
+                    for (var dev of data.developer) {
+                        $('#developer').append(dev.Developer + "<br/><span style='color:yellow'>" + dev.Institute + "</span><br/>")
+                    }
+                }).fail(function () {
+                    $('#contributer').append("<h3 style='color:red'>not available</h3>")
+                });
+            });
+        </script>
+        <div class="row px-5">
+            <div class="col d-flex flex-column">
+                <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Developed by :</span>
+                <div id="developer"> Durgesh Tiwari </div>
+            
+                <div id="developer" style='font-family: "Open Sans", sans-serif;color: #3ecaa0;'>Bundelkand Univestry </div></div>
+
+            </div>
+            <div class="col d-flex flex-column">
+                <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contributors :</span>
+                <span id="contributer"> </span>
+
+            </div>
+
+        </div>
+        <div class="m-0 py-2 text-center" style='        font-family: "Open Sans", sans-serif;background: #3ecaa0;'>
+            <a class="text-primary" href="http://ebootathon.com/"> eBOOTATHON </a>
+            &nbsp;
+           <p> <a class="text-primary" href="https://www.iitk.ac.in/">IIT Kanpur  </a> | <a href="https://aktu.ac.in/"> AKTU Lucknow</a>  | <a href="http://recbanda.ac.in/"> REC Banda</a> | <a href="https://dbatu.ac.in/">DBATU Lonere Maharashtra</a> | <a href="https://www.bujhansi.ac.in/">BU Jhansi</a>
+           </p> </div>
+    </footer>
+
+</body>
+
+
+</html>
